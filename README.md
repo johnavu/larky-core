@@ -1,0 +1,2 @@
+# larky-core
+Simple package
