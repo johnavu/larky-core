@@ -1,0 +1,26 @@
+{
+  "name": "larky/core",
+  "description": "Library of laravel project",
+  "type": "library",
+  "license": "BSD-2-Clause",
+  "authors": [
+    {
+      "name": "Vu Ngoc Anh",
+      "email": "johnavu.it@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Larky\\Core\\": "/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Larky\\Core\\CoreServiceProvider"
+      ]
+    }
+  }
+}
