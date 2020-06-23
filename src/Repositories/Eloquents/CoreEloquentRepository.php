@@ -73,6 +73,12 @@ abstract class CoreEloquentRepository implements CoreInterface
                 foreach ($conditions['filterGroups'] as $filterGroups) {
                     $model = $model->where(function ($q) use ($filterGroups) {
                         foreach ($filterGroups['filters'] as $filter) {
+                            if (strtolower($filter['condition_type']) == 'in') {
+                                $q->orWhereIn($filter['field'], $filter['value']);
+                            }
+                            if (strtolower($filter['condition_type']) == 'between') {
+                                $q->orWhereBetween($filter['field'], $filter['value']);
+                            }
                             $q->orWHere($filter['field'],
                                 $filter['condition_type'],
                                 $filter['value']);
